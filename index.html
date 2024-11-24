@@ -68,11 +68,10 @@
       <button type="button" id="update-options">Update Options</button>
     </form>
   </div>
-  <script type="module">
+  <script src="./floating.umd.js"></script>
+  <script>
 
-    import { Floating } from './src/index.ts';
-
-    let floating = new Floating({
+    let floating = new Floatingjs.Floating({
       elements: ['❄️', '✨', '🎉', '⭐️'],
       maxElements: 20,
       interval: 1000,
