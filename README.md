@@ -18,7 +18,7 @@ Floating.js is a lightweight library for creating animated floating elements on 
 You can include Floating.js in your project via npm:
 
 ```bash
-npm install floating-js
+npm install --save @janmarkuslanger/floatingjs
 ```
 
 ---
@@ -30,7 +30,7 @@ Here’s how to get started with Floating.js:
 ### 1. Import the Library
 
 ``` javacript
-import { Floating } from 'floating-js';
+import { Floating } from '@janmarkuslanger/floatingjs';
 ```
 
 ### 2. Initialize the Floating Effect
