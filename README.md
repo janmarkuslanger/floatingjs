@@ -70,7 +70,7 @@ floating.stop();
 ## Example 🎨
 
 ``` javascript
-import { Floating } from 'floating-js';
+import { Floating } from '@janmarkuslanger/floatingjs';
 
 const snowflakes = new Floating({
   elements: ['❄️', '❅', '❆'], // Snowflake shapes
