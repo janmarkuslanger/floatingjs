@@ -9,9 +9,8 @@
     "preview": "vite preview",
     "prepare": "npm run build" 
   },
-  "main": "dist/index.js", 
-  "module": "dist/index.esm.js", 
-  "types": "dist/index.d.ts", 
+  "main": "dist/floating.umd.js", 
+  "module": "dist/floating.es.js", 
   "repository": {
     "type": "git", 
     "url": "https://github.com/janmarkuslanger/floating-js"
