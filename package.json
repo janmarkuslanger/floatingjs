@@ -1,15 +1,40 @@
 {
-  "name": "my-vue-app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "floating-js", 
+  "version": "0.0.1", 
+  "private": false, 
+  "type": "module", 
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "vite", 
+    "build": "tsc && vite build", 
+    "preview": "vite preview",
+    "prepare": "npm run build" 
   },
+  "main": "dist/index.js", 
+  "module": "dist/index.esm.js", 
+  "types": "dist/index.d.ts", 
+  "repository": {
+    "type": "git", 
+    "url": "https://github.com/janmarkuslanger/floating-js"
+  },
+  "keywords": [
+    "floating",
+    "animation",
+    "js",
+    "library",
+    "css"
+  ],
+  "author": "Jan-Markus Langer",
+  "license": "MIT", 
+  "dependencies": {},
   "devDependencies": {
-    "typescript": "~5.6.2",
+    "typescript": "~5.6.2", 
     "vite": "^5.4.10"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=12.0.0"
   }
 }
