@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating.js Demo</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #1e3c72, #2a5298);
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .demo-container {
+      text-align: center;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffffff22;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #ffffff44;
+    }
+    .options-form {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .options-form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .options-form input {
+      padding: 5px;
+      font-size: 14px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <h1>Floating.js Demo</h1>
+    <button id="toggle-animation">Start/Stop Animation</button>
+
+    <form class="options-form">
+      <label for="elements">Elements (comma-separated):</label>
+      <input type="text" id="elements" placeholder="e.g., ❄️,✨,🎉,⭐️" value="❄️,✨,🎉,⭐️">
+
+      <label for="max-elements">Max Elements:</label>
+      <input type="number" id="max-elements" placeholder="e.g., 20" value="20">
+
+      <label for="interval">Interval (ms):</label>
+      <input type="number" id="interval" placeholder="e.g., 1000" value="1000">
+
+      <button type="button" id="update-options">Update Options</button>
+    </form>
+  </div>
+  <script type="module">
+
+    import { Floating } from './src/index.ts';
+
+    let floating = new Floating({
+      elements: ['❄️', '✨', '🎉', '⭐️'],
+      maxElements: 20,
+      interval: 1000,
+    });
+
+    let running = false;
+
+    document.getElementById('toggle-animation').addEventListener('click', function () {
+      running = !running;
+      if (running) {
+        floating.start();
+      } else {
+        floating.stop();
+      }
+    });
+
+    document.getElementById('update-options').addEventListener('click', function () {
+      const elementsInput = document.getElementById('elements').value;
+      const maxElementsInput = parseInt(document.getElementById('max-elements').value, 10);
+      const intervalInput = parseInt(document.getElementById('interval').value, 10);
+
+      const elements = elementsInput.split(',').map(function (e) {
+        return e.trim();
+      });
+
+      floating.stop();
+
+      floating = new Floating({
+        elements: elements,
+        maxElements: maxElementsInput,
+        interval: intervalInput,
+      });
+
+      if (running) {
+        floating.start();
+      }
+    });
+
+    floating.start();
+    running = true;
+
+  </script>
+</body>
+</html>
