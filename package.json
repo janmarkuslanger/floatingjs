@@ -3,6 +3,7 @@
   "version": "0.0.1", 
   "private": false, 
   "type": "module", 
+  "types": "types.d.ts",
   "scripts": {
     "dev": "vite", 
     "build": "tsc && vite build", 
