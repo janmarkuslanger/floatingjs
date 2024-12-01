@@ -1,19 +1,19 @@
 {
-  "name": "@janmarkuslanger/floatingjs", 
-  "version": "0.0.2", 
-  "private": false, 
-  "type": "module", 
-  "types": "types.d.ts",
+  "name": "@janmarkuslanger/floatingjs",
+  "version": "0.0.3",
+  "private": false,
+  "type": "module",
+  "types": "dist/types.d.ts",
   "scripts": {
-    "dev": "vite", 
-    "build": "tsc && vite build", 
+    "dev": "vite",
+    "build": "tsc && vite build",
     "preview": "vite preview",
-    "prepare": "npm run build" 
+    "prepare": "npm run build"
   },
-  "main": "dist/floating.umd.js", 
-  "module": "dist/floating.es.js", 
+  "main": "dist/floating.umd.js",
+  "module": "dist/floating.es.js",
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "https://github.com/janmarkuslanger/floating-js"
   },
   "keywords": [
@@ -24,16 +24,15 @@
     "css"
   ],
   "author": "Jan-Markus Langer",
-  "license": "MIT", 
-  "dependencies": {},
+  "license": "MIT",
   "devDependencies": {
-    "typescript": "~5.6.2", 
-    "vite": "^5.4.10"
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0"
   },
   "files": [
     "dist"
   ],
-  "peerDependencies": {},
   "engines": {
     "node": ">=12.0.0"
   }
