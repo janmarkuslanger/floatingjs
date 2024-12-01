@@ -6,6 +6,7 @@ type Options = {
     elements: FloatingElement[];
     maxElements?: number;
     interval?: number;
+    root: HTMLElement;
 };
 
 type Settings = {
@@ -19,14 +20,6 @@ type State = {
     elements: HTMLElement[],
 };
 
-const DEFAULTS = {
-    elements: [],
-    maxElements: 10,
-    interval: 2000,
-    root: document?.body
-};
-
-
 class Floating {
     private settings: Settings;
     private currentState: State;
@@ -36,6 +29,14 @@ class Floating {
         this.currentState = {
             elements: [],
         };
+
+        const DEFAULTS = {
+            elements: [],
+            maxElements: 10,
+            interval: 2000,
+            root: document?.body
+        };
+        
         this.settings = Object.assign({}, DEFAULTS, options);
     }
 
@@ -69,9 +70,9 @@ class Floating {
 
     run() {
         if (!this.settings.root) {
+            console.warn('No root defined');
             return;
         }
-
 
         const isMax = this.currentState.elements.length >= this.settings.maxElements;
         
