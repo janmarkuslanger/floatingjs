@@ -23,7 +23,7 @@ const DEFAULTS = {
     elements: [],
     maxElements: 10,
     interval: 2000,
-    root: document.body
+    root: document?.body
 };
 
 
@@ -68,6 +68,11 @@ class Floating {
     }
 
     run() {
+        if (!this.settings.root) {
+            return;
+        }
+
+
         const isMax = this.currentState.elements.length >= this.settings.maxElements;
         
         if (isMax) {
