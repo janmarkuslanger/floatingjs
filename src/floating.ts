@@ -6,7 +6,7 @@ type Options = {
     elements: FloatingElement[];
     maxElements?: number;
     interval?: number;
-    root: HTMLElement;
+    root?: HTMLElement;
 };
 
 type Settings = {
@@ -36,7 +36,7 @@ class Floating {
             interval: 2000,
             root: document?.body
         };
-        
+
         this.settings = Object.assign({}, DEFAULTS, options);
     }
 
