@@ -49,6 +49,11 @@ declare class Floating {
     private applyStyle(element: HTMLElement): void;
 
     /**
+     * Update the root
+     */
+    updateRoot(root: HTMLElement): void;
+
+    /**
      * Executes the floating logic and adds an element to the DOM.
      */
     run(): void;

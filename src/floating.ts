@@ -39,6 +39,10 @@ class Floating {
         this.settings = Object.assign({}, DEFAULTS, options);
     }
 
+    updateRoot(root: HTMLElement) {
+        this.settings.root = root;
+    }
+
     createCharElement(char: string) {
         const element = document.createElement('div');
         element.classList.add('floatingjs-element');
